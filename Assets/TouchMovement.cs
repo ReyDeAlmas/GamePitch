@@ -11,6 +11,8 @@ public class TouchMovement : MonoBehaviour
     public Collider2D myCollider;
     public bool isTouched = false;
 
+    public bool isActive = true;
+
   
 
 
@@ -24,7 +26,7 @@ public class TouchMovement : MonoBehaviour
 
     void Update()
     {
-         if (Input.touchCount > 0) // Verifica si hay toques en la pantalla
+         if (Input.touchCount > 0 && isActive) // Verifica si hay toques en la pantalla
         {
             Touch touch = Input.GetTouch(0); // Obtiene el primer toque en la pantalla
 
