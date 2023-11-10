@@ -14,6 +14,10 @@ public class BlackHole : MonoBehaviour
 
     public float attractionSpeed;
 
+    public Falldown falldown;
+
+    public float gravity;
+
     public float timeOut;
 
     public bool isTrapped;
@@ -24,6 +28,8 @@ public class BlackHole : MonoBehaviour
     {
       isTrapped = false;  
       player =  GameObject.FindGameObjectWithTag("Player");
+      touchMovement = player.GetComponent<TouchMovement>();
+      falldown.fallSpeed = gravity;
 
     }
 
@@ -41,6 +47,8 @@ public class BlackHole : MonoBehaviour
             player.transform.position = Vector2.MoveTowards(currentPosition, targetPosition, attractionSpeed * Time.deltaTime);
         }
 
+         falldown.fallSpeed = 0;
+
             time += Time.deltaTime;
 
             if(time >= timeOut){
@@ -55,8 +63,11 @@ public class BlackHole : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            
             touchMovement.isActive = false;
             isTrapped = true;
+            
+            
 
         }
     }

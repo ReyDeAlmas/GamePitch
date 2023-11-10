@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EscudoPower : MonoBehaviour
 {
-    public bool isActive;
+    public bool shieldActive;
 
     public float time;
 
@@ -19,25 +19,31 @@ public class EscudoPower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isActive = true;
-        currentObject.GetComponent<Renderer>().enabled = true;
-        circleCollider2D.enabled = true;
+        shieldActive = false;
+        currentObject.GetComponent<Renderer>().enabled = false;
+        circleCollider2D.enabled = false;
+        time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+       if(shieldActive)
+       {
+            time += Time.deltaTime;
+            circleCollider2D.enabled = true;
+            currentObject.GetComponent<Renderer>().enabled = true;
 
-        if(time > duration)
-        {
+            if(time > duration)
+            {
+                shieldActive = false;
+                time = 0;
+                currentObject.GetComponent<Renderer>().enabled = false;
+                circleCollider2D.enabled = false;
+            }
 
-            isActive = false;
-            time = 0;
-             currentObject.GetComponent<Renderer>().enabled = false;
-                  circleCollider2D.enabled = false;
 
-        }
+       }
     }
     
    private void OnTriggerEnter2D(Collider2D other)

@@ -6,18 +6,30 @@ public class BombaAtack : MonoBehaviour
 {
     public CircleCollider2D circleCollider;
     public float targetRadius; // Ajusta el radio deseado aquí
-    public float growthSpeed; // Calculado como (targetRadius - initialRadius) / 3
+    public float growthSpeed; // Calculado como (targetRadius - initialRadius) / 34
+
+    public bool isActive;
 
     private void Start()
     {
         circleCollider = GetComponent<CircleCollider2D>();
-        StartCoroutine(GrowCollider());
+        isActive = false;
     }
 
+
+    private void Update()
+    {
+        if(isActive)
+        {
+               StartCoroutine(GrowCollider());
+               isActive = false;
+        }
+    }
+    
     private System.Collections.IEnumerator GrowCollider()
     {
         float elapsedTime = 0f;
-        float initialRadius = circleCollider.radius;
+        float initialRadius = 0;
 
         while (elapsedTime < 0.8f)
         {
@@ -28,7 +40,7 @@ public class BombaAtack : MonoBehaviour
         }
 
         // Asegúrate de establecer explícitamente el radio final una vez que se alcanza el tiempo deseado.
-        circleCollider.radius = targetRadius;
+        circleCollider.radius = 0;
     }
 
       void OnTriggerEnter2D(Collider2D other)

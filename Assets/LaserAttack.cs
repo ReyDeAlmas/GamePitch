@@ -8,16 +8,29 @@ public class LaserAttack : MonoBehaviour
     public float targetSizeX;
     public float growthSpeed; // Ajusta la velocidad de crecimiento según tus necesidades
 
+    public bool isActive;
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        StartCoroutine(GrowCollider());
+        isActive = false;
+       
     }
 
-    private System.Collections.IEnumerator GrowCollider()
+    private void Update()
+    {
+        if(isActive)
+        {
+             StartCoroutine(GrowCollider());
+             isActive = false;
+        }
+    }
+
+
+    public System.Collections.IEnumerator GrowCollider()
     {
         float elapsedTime = 0f;
-        float initialSizeX = boxCollider.size.x;
+        float initialSizeX = 0;
 
         while (elapsedTime < 2f)
         {
@@ -27,8 +40,8 @@ public class LaserAttack : MonoBehaviour
             yield return null;
         }
 
-        // Asegúrate de establecer explícitamente el tamaño final una vez que se alcanza el tiempo deseado.
-        boxCollider.size = new Vector2(targetSizeX, boxCollider.size.y);
+        
+        boxCollider.size = new Vector2(0, boxCollider.size.y);
     }
 
        void OnTriggerEnter2D(Collider2D other)
