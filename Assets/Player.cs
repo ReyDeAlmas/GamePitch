@@ -18,11 +18,17 @@ public class Player : MonoBehaviour
 
     public GameObject escudo;
 
-    public
+    public PlayerSettings settings;
+
+    public ScenesController sceneController;
+
+    public HUDMannagger hud;
 
     void Start()
     {
-        
+        health += settings.healthBonus;
+        endurance = settings.armoredBonus;
+
     }
 
     // Update is called once per frame
@@ -75,8 +81,23 @@ public class Player : MonoBehaviour
 
        float damageTaken = damage - endurance;
 
-        health -= damageTaken;
+        if(health - damageTaken > 0)
+        {
+            health -= damageTaken;
+        }else{
+            Debug.Log("Sin vida");
+            hud.setCristales();
+            hud.setJson();
+            sceneController.pauseScene();
+            sceneController.toogleHUD();
+            sceneController.toogleGameOver();
 
+
+            
+        }
+
+
+    
 
     }
 }

@@ -128,9 +128,22 @@ public class GameManager : MonoBehaviour
                 hoderSpawnTime = 0;
                 randomNumber = Random.Range(1, 6);
                 hordeCount++;
+                
+                hordeSpawnInterval *= 0.98f;
+                spawnInterval *= 0.98f;
+                spawnDuration += 0.1f;
+
+                speedMinionOne *= 1.02f;
+                speedMinionTwo *= 1.02f;
+                speedMinionThree *= 1.02f;
+
+
+
 
                 lastSuicideQuantity = suicideQuantity;
                 lastMetheorQuantity = metheorQuantity;
+
+
 
                 spawnDropped();
 

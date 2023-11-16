@@ -14,6 +14,8 @@ public class EscudoPower : MonoBehaviour
 
     public CircleCollider2D circleCollider2D;
 
+    public PlayerSettings settings;
+
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class EscudoPower : MonoBehaviour
         currentObject.GetComponent<Renderer>().enabled = false;
         circleCollider2D.enabled = false;
         time = 0;
+        duration += settings.shieldDuration;
     }
 
     // Update is called once per frame
