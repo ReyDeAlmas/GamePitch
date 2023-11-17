@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3
-  distanciaMinima: 2
+  distanciaMinima: 1.5
   velocidadGiro: 200
   enemyShot: {fileID: 5747138850372342431}
 --- !u!114 &5747138850372342431
@@ -156,10 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3882ce4457055d340b134f2d597c2a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoADisparar: {fileID: 6528629881166739075, guid: 8ddf9dd2963ebf34cbf00c38944c90ae, type: 3}
+  objetoADisparar: {fileID: 6528629881166739075, guid: dc968d181b0dcf840a0a5b016aeb5f40, type: 3}
   velocidadDisparo: 1
   time: 0
-  shotTime: 0.2
+  shotTime: 0.8
   isActive: 0
 --- !u!114 &5747138850372342428
 MonoBehaviour:

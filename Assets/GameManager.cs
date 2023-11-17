@@ -75,6 +75,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject escudo;
 
+
+    public GameObject boss;
+    public GameObject bossSpawn;
+
+    public bool isBossTime;
+    public bool isBossSpawned;
+
     
 
     
@@ -108,6 +115,12 @@ public class GameManager : MonoBehaviour
 
             hordeCount = 1;
 
+            isBossTime = false;
+
+            isBossSpawned =true;
+
+
+
              
          
     }
@@ -115,19 +128,39 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
+        if(hordeCount == 14)
+        {
+            Debug.Log("Boss Time");
+        }
+
+        if(isBossTime){
+             
+
+             if(isBossSpawned)
+             {  
+                Instantiate(boss, bossSpawn.transform.position, Quaternion.identity);
+                isBossSpawned = false;
+             }
+        }
+
+
+        if(!isBossTime)
+        {
+            
 
         if(!hordeIsSpawning)
         {
             hoderSpawnTime += Time.deltaTime;
 
             if(hoderSpawnTime > hordeSpawnInterval)
-            {
+            {   
+                hordeCount++;
                 hordeIsSpawning = true;
                 spawnEnabled = true;
                 hoderSpawnTime = 0;
                 randomNumber = Random.Range(1, 6);
-                hordeCount++;
+               
                 
                 hordeSpawnInterval *= 0.98f;
                 spawnInterval *= 0.98f;
@@ -227,14 +260,19 @@ public class GameManager : MonoBehaviour
                 spawnTime = 0;
              }
 
-            if(spawnTimeElapsed > spawnDuration)
-            {
-                spawnEnabled = false;
-                hordeIsSpawning = false;
-                spawnTimeElapsed = 0;
-            }
+                if(spawnTimeElapsed > spawnDuration)
+                {
+                    spawnEnabled = false;
+                    hordeIsSpawning = false;
+                     if(hordeCount == 14)
+                        {
+                            isBossTime = true;
+                        }
+                    spawnTimeElapsed = 0;
+                }
 
            
+            }
         }
         
     }

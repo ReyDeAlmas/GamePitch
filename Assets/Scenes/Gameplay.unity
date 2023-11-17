@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 150843083}
   m_Layer: 0
   m_Name: SpawnRightSuicide
-  m_TagString: Untagged
+  m_TagString: SpawnRightSucide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2387,7 +2387,7 @@ MonoBehaviour:
   hoderSpawnTime: 0
   hordeIsSpawning: 0
   randomNumber: 0
-  hordeCount: 4
+  hordeCount: 12
   suicideQuantity: 5
   lastSuicideQuantity: 0
   metheorQuantity: 1
@@ -2403,6 +2403,10 @@ MonoBehaviour:
   laserAttack: {fileID: 8730524347184959451, guid: 90b5cb1bd9a05fd46b3c3f0b39219f00, type: 3}
   bombAttack: {fileID: 4569846060412124543, guid: 6dbcbfe5e4562414889fc65d5de727d1, type: 3}
   escudo: {fileID: 1221200499810839619, guid: f54c43043970ccc4e8ee374a2ba7217f, type: 3}
+  boss: {fileID: 920892953671377301, guid: 4b1ce5ecc4f2c104abd9d9743be94db7, type: 3}
+  bossSpawn: {fileID: 1704299481}
+  isBossTime: 0
+  isBossSpawned: 0
 --- !u!114 &1193153227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,6 +3171,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439759176}
   m_CullTransparentMesh: 1
+--- !u!1 &1472549796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472549797}
+  m_Layer: 0
+  m_Name: SpawnBossLeft
+  m_TagString: BossBulletOne
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472549797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472549796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.74, y: -4.47, z: -0.0040169344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1473425765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,7 +3492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f173c39d1e41d4883a8cfc4f7ccba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 300
   endurance: 1
   points: 0
   doubleShot: {fileID: 409061106}
@@ -3468,6 +3503,37 @@ MonoBehaviour:
   settings: {fileID: 1193153227}
   sceneController: {fileID: 2137723509}
   hud: {fileID: 1193153224}
+--- !u!1 &1566476608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566476609}
+  m_Layer: 0
+  m_Name: SpawnBossRight
+  m_TagString: BossBulletTwo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566476609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566476608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.85, y: -2.09, z: -0.0040169344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1582191702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3742,7 @@ GameObject:
   - component: {fileID: 1697966301}
   m_Layer: 0
   m_Name: SpawnLeftSuicide
-  m_TagString: Untagged
+  m_TagString: SpawnLeftSucide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3710,6 +3776,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1704299481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704299482}
+  m_Layer: 0
+  m_Name: BossSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704299482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704299481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.68, z: -0.0040169344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770915000
 GameObject:

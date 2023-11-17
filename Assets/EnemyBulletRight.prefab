@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1976328824002089233}
   - component: {fileID: 2660049922929707371}
   - component: {fileID: 610169475303791322}
-  - component: {fileID: 4912947562999779529}
+  - component: {fileID: 4890275670551800455}
   m_Layer: 0
-  m_Name: EnemyBullet
+  m_Name: EnemyBulletRight
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &4912947562999779529
+--- !u!114 &4890275670551800455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6528629881166739075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642c50b006fdf674ebdf49a59405195e, type: 3}
+  m_Script: {fileID: 11500000, guid: de11f0083f7b54441a51c8944089f907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3

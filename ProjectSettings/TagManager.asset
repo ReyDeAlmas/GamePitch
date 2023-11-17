@@ -9,6 +9,10 @@ TagManager:
   - EnemyBullet
   - Bullet
   - GameManager
+  - BossBulletOne
+  - BossBulletTwo
+  - SpawnLeftSucide
+  - SpawnRightSucide
   layers:
   - Default
   - TransparentFX
