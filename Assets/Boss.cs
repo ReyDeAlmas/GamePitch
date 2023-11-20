@@ -20,6 +20,9 @@ public class Boss : MonoBehaviour
     public GameObject spawnSpinnerLeft;
     public GameObject spawnSpinnerRight;
 
+
+    public GameObject tentaculo;
+
     public GameObject spinner;
 
     public float time;
@@ -77,8 +80,34 @@ public class Boss : MonoBehaviour
                     Instantiate(bulletRight, spawnRight.transform.position, spawnRight.transform.rotation);
 
 
+                    
+
+                    // Utiliza un switch para manejar cada caso
+                    
+
                     if(spawnSpinner)
                     {
+
+                         int valorRandom = Random.Range(1, 3);
+
+                        switch (valorRandom)
+                    {
+                        case 1:
+                           Instantiate(tentaculo, spawnLeft.transform.position, spawnLeft.transform.rotation);
+                            // Código para el caso 1
+                            break;
+
+                        case 2:
+                          Instantiate(tentaculo, spawnRight.transform.position, spawnRight.transform.rotation);
+                            // Código para el caso 2
+                            break;
+
+                        default:
+                            Debug.Log("El valor randomizado está fuera del rango esperado.");
+                            // Código para otros casos (si es necesario)
+                            break;
+                    }
+
                         Instantiate(spinner, spawnSpinnerLeft.transform.position, spawnSpinnerLeft.transform.rotation);
                         Instantiate(spinner, spawnSpinnerRight.transform.position, spawnSpinnerRight.transform.rotation);
                         spawnSpinner = false;

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 920892953671377305}
   - component: {fileID: 920892953671377304}
   - component: {fileID: 920892953671377303}
-  - component: {fileID: 920892953671377302}
   - component: {fileID: 920892953671377307}
+  - component: {fileID: -4974246601702846285}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -125,22 +125,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &920892953671377302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920892953671377301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fab526dc3fed34cb74b5adb1c1aeae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5000
-  collisionDamaged: 1
-  points: 2500
-  playerObject: {fileID: 0}
 --- !u!114 &920892953671377307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,11 +145,29 @@ MonoBehaviour:
   bulletRight: {fileID: 6528629881166739075, guid: d0a5d62079da76d43b2b0013b084599a, type: 3}
   spawnSpinnerLeft: {fileID: 0}
   spawnSpinnerRight: {fileID: 0}
+  tentaculo: {fileID: 1929992946878606149, guid: 04e5df7f8e9658f4da8ca932e1d526d1, type: 3}
   spinner: {fileID: 5747138850372342420, guid: 6ec5a3d2c830f8c4f96e07333840b8cf, type: 3}
   time: 5
   timeElapsed: 0
   spawnBulletInterval: 0.5
   spawnBulletTime: 0
-  timeActive: 10
+  timeActive: 6
   timeActiveElapsed: 0
   spawnSpinner: 0
+--- !u!114 &-4974246601702846285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920892953671377301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b8a0fad3d0a3347a92fb696045c128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  collisionDamaged: 5
+  points: 550
+  playerObject: {fileID: 0}
+  gameManager: {fileID: 0}

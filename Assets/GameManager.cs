@@ -129,18 +129,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        if(hordeCount == 14)
-        {
-            Debug.Log("Boss Time");
-        }
+       
 
         if(isBossTime){
              
+          
 
              if(isBossSpawned)
              {  
+                Debug.Log("Spawneando boss");
                 Instantiate(boss, bossSpawn.transform.position, Quaternion.identity);
-                isBossSpawned = false;
+                isBossSpawned = false; 
              }
         }
 
@@ -264,7 +263,7 @@ public class GameManager : MonoBehaviour
                 {
                     spawnEnabled = false;
                     hordeIsSpawning = false;
-                     if(hordeCount == 14)
+                     if(hordeCount % 14 == 0)
                         {
                             isBossTime = true;
                         }
@@ -402,6 +401,12 @@ public class GameManager : MonoBehaviour
             case 8:    spawnedObject = Instantiate(dropped, limitEight.position, Quaternion.identity);; break;
             case 9:    spawnedObject = Instantiate(dropped, limitNine.position, Quaternion.identity);; break;
         }
+    }
+
+    public void bosDefeated()
+    {
+        isBossTime = false;
+        isBossSpawned = true;
     }
 
 

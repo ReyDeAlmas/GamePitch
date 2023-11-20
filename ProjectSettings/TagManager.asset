@@ -13,6 +13,7 @@ TagManager:
   - BossBulletTwo
   - SpawnLeftSucide
   - SpawnRightSucide
+  - Tentaculo
   layers:
   - Default
   - TransparentFX
