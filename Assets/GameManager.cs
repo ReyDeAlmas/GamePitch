@@ -365,7 +365,7 @@ public class GameManager : MonoBehaviour
     public void spawnDropped()
     {
         GameObject dropped = null;
-        int randomObject = Random.Range(1, 6);
+        int randomObject = Random.Range(1, 5);
 
         switch(randomObject)
         {
@@ -379,11 +379,10 @@ public class GameManager : MonoBehaviour
                 dropped = laserAttack;
             break;
             case 4:
-                dropped = bombAttack;
+                 dropped = escudo;
             break;
-            case 5:
-                dropped = escudo;
-            break;
+          
+          
         }
 
         int randomSpawn = Random.Range(1, 10);

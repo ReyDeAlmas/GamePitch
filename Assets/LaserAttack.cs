@@ -8,12 +8,15 @@ public class LaserAttack : MonoBehaviour
     public float targetSizeX;
     public float growthSpeed; // Ajusta la velocidad de crecimiento según tus necesidades
 
+    public SpriteRenderer laserAnimacion; 
+
     public bool isActive;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         isActive = false;
+        laserAnimacion.enabled = false;
        
     }
 
@@ -23,7 +26,10 @@ public class LaserAttack : MonoBehaviour
         {
              StartCoroutine(GrowCollider());
              isActive = false;
+             laserAnimacion.enabled = true;
         }
+
+        
     }
 
 
@@ -42,6 +48,7 @@ public class LaserAttack : MonoBehaviour
 
         
         boxCollider.size = new Vector2(0, boxCollider.size.y);
+        laserAnimacion.enabled = false;
     }
 
        void OnTriggerEnter2D(Collider2D other)
